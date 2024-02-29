@@ -22,20 +22,22 @@ function disPlayDate1(){
 	return $year2;
 }
 
-//this function will display the index admin side table all the data in the table
-function displayIndexTable(){
-	global $mydb;
+//this method is removed because of the changes in the database
+// function displayIndexTable(){
+// 	global $mydb;
 
-		$mydb->setQuery("select s.STUD_ID,s.IDNO,s.STUD_NAME as 'name',nst.NSTP_PROGRAM,concat(sec.SEC_NAME,' ',sec.YR_SECTION) as 'cys',ac.ACAD_YR,st.ADDRESS,st.CONTACT from students s,nstp_prog nst,sections sec,acad_year ac,stud_details st where s.SECT_ID = sec.SECT_ID and s.IDNO = st.IDNO and sec.NSTP_ID = nst.NSTP_ID and s.ACAD_ID = ac.ACAD_ID order by nst.NSTP_PROGRAM asc;");
+// 		$mydb->setQuery("select s.STUD_ID,s.IDNO,s.STUD_NAME as 'name',nst.NSTP_PROGRAM,concat(sec.SEC_NAME,' ',sec.YR_SECTION) as 'cys',ac.ACAD_YR,st.ADDRESS,st.CONTACT from students s,nstp_prog nst,sections sec,acad_year ac,stud_details st where s.SECT_ID = sec.SECT_ID and s.IDNO = st.IDNO and sec.NSTP_ID = nst.NSTP_ID and s.ACAD_ID = ac.ACAD_ID order by nst.NSTP_PROGRAM asc;");
 
-		$res = $mydb->executeQuery();
+// 		$res = $mydb->executeQuery();
 
-		if(!$res){
-			return false;
-		}else{
-			return $res;
-		}
-}// this part is for all admin side code function ###########################################################
+// 		if(!$res){
+// 			return false;
+// 		}else{
+// 			return $res;
+// 		}
+//}
+
+// this part is for all admin side code function ###########################################################
 function displayCwtsAdmin(){
 	global $mydb;
 

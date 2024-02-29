@@ -15,9 +15,9 @@
                 <thead>
                   <?php
 
-                    $adminTbl = new myTable();
+                    // $adminTbl = new myTable();
 
-                    $data = $adminTbl->displayIndexTable();
+                    // $data = $adminTbl->displayIndexTable();
 
                    ?>
 

@@ -35,7 +35,7 @@ if($_POST['action']=='process'){
 
 		 $iflogin = new user();
 
-		 $iftrue = $iflogin::AuthenticateUser($u_email,$u_pass);
+		 $iftrue = $iflogin->AuthenticateUser($u_email,$u_pass);
 
 		 if($iftrue == 1){
 		 	//true
@@ -113,7 +113,7 @@ if($_POST['action'] == 'AdmProcess'){
 		// $output = array('success'=>'success');
 
 		$iflogin = new user();
-		$iftrue2 = $iflogin::AuthenticateADMIN($email,$pass);
+		$iftrue2 = $iflogin->AuthenticateADMIN($email,$pass);
 
 		 if($iftrue2 == 1){
 
@@ -139,6 +139,7 @@ if($_POST['action'] == 'AdmProcess'){
 		 	//Acc Not Found!
 		 	$output = array('err_acc'=>'Account Not Found!');
 		 }
+		
 	}
 
 

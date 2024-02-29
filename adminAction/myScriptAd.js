@@ -84,12 +84,26 @@ function enableButton(){
 				}
 			},
 
-			error:function(){
-				divAlert.show();
-				err_message.text('Failed To Login! Or Check Your Internet Connection!').fadeTo(3000,500).slideUp(500);
-				divAlert.fadeTo(3000,500).slideUp(500);
+			error:function(xhr, status, error){
+				
+				// divAlert.show();
+				// err_message.text('Failed To Login! Or Check Your Internet Connection!').fadeTo(3000,500).slideUp(500);
+				// divAlert.fadeTo(3000,500).slideUp(500);
 				displayLink();
 			    enableButton();
+				console.log("Status: " + status); // Get the status
+				console.log("Error: " + error);   // Get the error message
+		
+				// Check the HTTP status code
+				if (xhr.status === 404) {
+					alert("Resource not found");
+				} else if (xhr.status === 500) {
+					alert("Internal server error");
+				}
+		
+				// Get additional error information (if available)
+				var responseText = xhr.responseText;
+				alert("Response text: " + responseText);
 			}
 
 		});

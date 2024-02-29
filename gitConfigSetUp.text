@@ -1,0 +1,8 @@
+
+Initialize in the terminal before committing all the changes in the code
+1. git config --global user.name "Your Name"
+2. git config --global user.email "your.email@example.com"
+
+To verify that your configurations have been set correctly, you can use the following command
+
+3. git config --global --list
